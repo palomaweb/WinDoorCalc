@@ -1,87 +1,85 @@
-Elnézést a félreértésért! Itt van egy módosított változat, amely csak a README tartalmát tartalmazza, instrukciók nélkül, így egyből bemásolható lesz:
+# Quote Request Web Application
 
-```
-# Árajánlatkérő Webalkalmazás
+A Laravel-based quote request and management system. Specially designed for requesting quotes for the purchase and installation of windows, doors, and their accessories. The system automatically generates the quote and sends it as a PDF to the applicant's email address.
 
-Laravel alapú árajánlatkérő- és kezelő rendszer. Speciálisan ablakok, ajtók és kiegészítőik megvásárlásához, beszereléséhez kérhető ajánlat. Az árajánlatot a rendszer automatikusan generálja és elküldi az igénylő e-mail címére PDF formátumban.
+## Features
 
-## Funkciók
+- Quote request form: Option to specify windows, doors, and their parameters and accessories by room.
+- Automatic quote generation.
+- Sending the quote as a PDF via email.
+- Admin panel to manage incoming requests.
+- Updating database prices from an Excel spreadsheet.
 
-- Árajánlatok automatikus generálása.
-- PDF formátumú árajánlat küldése e-mailben.
-- Speciális igények szerinti testreszabás (ablakok, ajtók és kiegészítőik).
-- Admin felület a beérkezett ajánlatok kezelésére.
+## Installation
 
-## Telepítés
+### 1. Clone the Repository
 
-### 1. Clone-ozás
-
-Először klónozd a projektet a saját gépedre:
+First, clone the project to your local machine:
 
 ```bash
-git clone https://github.com/felhasznalo/ajanlatkeres.git
+git clone https://github.com/palomaweb/WinDoorCalc.git
 ```
 
-### 2. Composer telepítése
+### 2. Install Composer
 
-A projekt Composer-t igényel a függőségek kezelésére. Ha nincs telepítve, telepítsd a következő parancs segítségével:
+The project requires Composer for dependency management. If it is not installed, use the following command to install it:
 
 ```bash
 composer install
 ```
 
-### 3. Környezeti fájl beállítása
+### 3. Set Up Environment File
 
-Hozd létre a `.env` fájlt a következő parancs használatával:
+Create the .env file using the following command:
 
 ```bash
 cp .env.example .env
 ```
 
-Ezután generáld le az alkalmazás kulcsát:
+Then, generate the application key:
 
 ```bash
 php artisan key:generate
 ```
 
-### 4. Adatbázis beállítás
+### 4. Set Up Database
 
-Állítsd be az adatbázis kapcsolatot a `.env` fájlban a saját adatbázisodnak megfelelően.
+Configure the database connection in the .env file according to your database settings.
 
-### 5. Migrációk futtatása
+### 5. Run Migrations
 
-Futtasd a migrációkat az adatbázis struktúrájának létrehozásához:
+Run the migrations to create the database structure:
 
 ```bash
 php artisan migrate
 ```
 
-### 6. Fejlesztői szerver indítása
+### 6. Start the Development Server
 
-Indítsd el a beépített fejlesztői szervert:
+Start the built-in development server:
 
 ```bash
 php artisan serve
 ```
 
-A szerver alapértelmezés szerint a `http://localhost:8000` címen lesz elérhető.
+The server will be available by default at http://localhost:8000.
 
-## Használat
+## Usage
 
-1. Látogass el a webalkalmazás főoldalára.
-2. Töltsd ki az ajánlatkérő űrlapot az ablakok, ajtók és egyéb termékek adataival.
-3. Kattints az "Árajánlat kérése" gombra.
-4. A rendszer automatikusan generálja az árajánlatot, amely PDF formátumban azonnal elküldésre kerül a megadott e-mail címre.
+1. Visit the homepage of the web application.
+2. Fill in the quote request form with information about windows, doors, and other products.
+3. Click the "Request Quote" button.
+4. The system will automatically generate the quote and send it as a PDF to the provided email address.
 
-## Tesztelés
+## Testing
 
-A projektben tesztelési szkriptek találhatóak, melyek futtatásához használd a következő parancsot:
+The project includes test scripts, which can be run using the following command:
 
 ```bash
 php artisan test
 ```
 
-Ez futtatja a teszteket, és ellenőrzi, hogy a rendszer megfelelően működik.
+This will run the tests and check if the system works correctly.
 
 ## License
 
